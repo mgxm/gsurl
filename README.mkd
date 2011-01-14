@@ -1,0 +1,17 @@
+# GSUrl
+
+Google URL Shortener in Objective-C
+
+I create this class for my studies in Objective-C
+
+## Usage
+    GSUrl *url = [[GSUrl alloc] initWithString:@"www.someurlhere.com"];
+    [url shorten]; // => http://goo.gl/aGf9V
+
+## Json
+  I use [json-framework]("http://stig.github.com/json-framework") for parser.
+
+## TODO
+- Expand a short URL
+- Look up a short URL's analytics
+- Look up a user's history
