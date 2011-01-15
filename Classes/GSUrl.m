@@ -32,7 +32,7 @@
 }
 
 -(void) prepareUrl {
-	_formatted_url = [[NSString alloc] initWithFormat:@"{ \"longUrl\":\"%@\"}", _long_url];
+	_formatted_url = [NSString stringWithFormat:@"{ \"longUrl\":\"%@\"}", _long_url];
 }
 
 -(NSMutableURLRequest*) prepareRequest {	
