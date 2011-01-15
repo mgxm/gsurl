@@ -17,7 +17,7 @@
 @implementation GSUrl
 
 -(GSUrl*) initWithString:(NSString *)url {
-	long_url = url;
+	_long_url = url;
 	return self;
 }
 
@@ -32,7 +32,7 @@
 }
 
 -(void) prepareUrl {
-	formatted_url = [[NSString alloc] initWithFormat:@"{ \"longUrl\":\"%@\"}", long_url];
+	_formatted_url = [[NSString alloc] initWithFormat:@"{ \"longUrl\":\"%@\"}", _long_url];
 }
 
 -(NSMutableURLRequest*) prepareRequest {	
@@ -40,7 +40,7 @@
 	
 	[request setHTTPMethod:@"POST"];
 	[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-	[request setHTTPBody:[[NSString stringWithString:formatted_url] dataUsingEncoding:NSASCIIStringEncoding]];
+	[request setHTTPBody:[[NSString stringWithString:_formatted_url] dataUsingEncoding:NSASCIIStringEncoding]];
 	
 	return request;
 }

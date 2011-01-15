@@ -10,9 +10,9 @@
 #define API_URI @"https://www.googleapis.com/urlshortener/v1/url"
 
 @interface GSUrl : NSObject {
-	NSString *long_url;
-	NSString *short_url;
-	NSString *formatted_url;
+	NSString *_long_url;
+	NSString *_short_url;
+	NSString *_formatted_url;
 }
 
 -(GSUrl*) initWithString: (NSString*) url;
