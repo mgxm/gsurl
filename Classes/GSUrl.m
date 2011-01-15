@@ -8,7 +8,7 @@
 
 #import "GSUrl.h"
 
-@interface GSUrl ()
+@interface GSUrl (Private)
 - (NSMutableURLRequest*) prepareRequest;
 - (void) prepareUrl;
 @end
