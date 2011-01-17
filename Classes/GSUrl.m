@@ -27,8 +27,9 @@
 	NSMutableURLRequest *prepared_request = [self prepareRequest];
 	NSData *response_data = [NSURLConnection sendSynchronousRequest:prepared_request returningResponse:nil error:nil];
 	NSString *json_string = [[NSString alloc] initWithData:response_data encoding:NSASCIIStringEncoding];
+	NSString *shortened_url = [NSString stringWithString:[[parser objectWithString:json_string] valueForKey:@"id"]];
 	
-	return [[parser objectWithString:json_string] valueForKey:@"id"];
+	return shortened_url;
 }
 
 -(void) prepareUrl {
