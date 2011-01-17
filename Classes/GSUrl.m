@@ -24,9 +24,9 @@
 -(NSString*) shorten {
 	[self prepareUrl];
 	SBJsonParser *parser = [[SBJsonParser alloc] init];
-	NSMutableURLRequest *preparedRequest = [self prepareRequest];
-	NSData *responseData = [NSURLConnection sendSynchronousRequest:preparedRequest returningResponse:nil error:nil];
-	NSString *json_string = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
+	NSMutableURLRequest *prepared_request = [self prepareRequest];
+	NSData *response_data = [NSURLConnection sendSynchronousRequest:prepared_request returningResponse:nil error:nil];
+	NSString *json_string = [[NSString alloc] initWithData:response_data encoding:NSASCIIStringEncoding];
 	
 	return [[parser objectWithString:json_string] valueForKey:@"id"];
 }
