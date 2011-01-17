@@ -29,6 +29,9 @@
 	NSString *json_string = [[NSString alloc] initWithData:response_data encoding:NSASCIIStringEncoding];
 	NSString *shortened_url = [NSString stringWithString:[[parser objectWithString:json_string] valueForKey:@"id"]];
 	
+	[parser release];
+	[json_string release];
+	
 	return shortened_url;
 }
 
